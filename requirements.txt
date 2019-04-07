@@ -1,0 +1,10 @@
+starlette
+pydantic
+gunicorn
+uvicorn
+fastapi
+requests
+ujson
+email_validator
+beautifulsoup4
+lxml
