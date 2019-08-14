@@ -1,10 +1,12 @@
-starlette
-pydantic
-gunicorn
+fastapi[all]
 uvicorn
-fastapi
+gunicorn
 requests
 ujson
 email_validator
 beautifulsoup4
 lxml
+google-python-cloud-debugger
+google-api-python-client
+google-cloud-firestore
+
