@@ -1,5 +1,5 @@
 runtime: python37
-entrypoint: gunicorn fact_getter:app -k uvicorn.workers.UvicornWorker
+entrypoint: gunicorn -w 2 fact_getter:app -k uvicorn.workers.UvicornWorker
 service: fact-getter
 
 handlers:
