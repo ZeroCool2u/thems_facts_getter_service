@@ -13,7 +13,7 @@ from ujson import loads
 logging.basicConfig(format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
                     datefmt='%m-%d-%Y %I:%M:%S %p', level=logging.WARNING)
 
-if not os.getenv('GAE_ENV', '').startswith('standard'):
+if not os.getenv('GAE_ENV', '').startswith('standard') and os.getenv('GITHUB_WORKFLOW') is None:
     os.environ[
         'GOOGLE_APPLICATION_CREDENTIALS'] = r'/home/theo/PycharmProjects/thems_facts/getter_service/facts-sender-owner.json'
 
