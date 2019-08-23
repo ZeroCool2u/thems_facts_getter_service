@@ -23,10 +23,9 @@ jobs:
           pip install -r requirements.txt
       - name: Test with pytest
         env:
-          GOOGLE_APPLICATION_CREDENTIALS: ${{ secrets.GOOGLE_APPLICATION_CREDENTIALS }}
+          APPLICATION_CREDENTIALS: ${{ secrets.APPLICATION_CREDENTIALS }}
         run: |
-          echo $GOOGLE_APPLICATION_CREDENTIALS > ~/facts-sender-owner.json
-          export GOOGLE_APPLICATION_CREDENTIALS=~/facts-sender-owner.json
+          echo $APPLICATION_CREDENTIALS > ~/facts-sender-owner.json
           pip install pytest
           python -m pytest tests/
       - name: Run deployment
