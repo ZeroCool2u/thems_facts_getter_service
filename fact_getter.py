@@ -17,6 +17,9 @@ if not os.getenv('GAE_ENV', '').startswith('standard') and os.getenv('GITHUB_WOR
     os.environ[
         'GOOGLE_APPLICATION_CREDENTIALS'] = r'/home/theo/PycharmProjects/thems_facts/getter_service/facts-sender-owner.json'
 
+elif os.getenv('GITHUB_WORKFLOW') is not None:
+    os.environ['GOOGLE_APPLICATION_CREDENTIALS'] = r'~/facts-sender-owner.json'
+
 
 def gcp_support() -> dict:
     try:
