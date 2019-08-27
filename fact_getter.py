@@ -74,8 +74,8 @@ async def inspirational_quote():
 
 @app.get("/design", response_class=UJSONResponse)
 async def design_quote():
-    r = requests.get(url='http://quotesondesign.com/wp-json/posts?filter[orderby]=rand&filter[posts_per_page]=1')
-    soup = BeautifulSoup(loads(r.content)[0]['content'], 'lxml')
+    r = requests.get(url='https://quotesondesign.com/wp-json/wp/v2/posts/?orderby=rand')
+    soup = BeautifulSoup(loads(r.content)[0]['content']['rendered'], 'lxml')
     return {'fact': soup.get_text(strip=True)}
 
 

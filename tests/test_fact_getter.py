@@ -59,6 +59,12 @@ def test_rand_gif():
     assert "fact" in response.json().keys()
 
 
+def test_rand_dad():
+    response = client.get("/dad_joke")
+    assert response.status_code == 200
+    assert "fact" in response.json().keys()
+
+
 def test_warmup():
     response = client.get("/_ah/warmup")
     assert response.status_code == 200
