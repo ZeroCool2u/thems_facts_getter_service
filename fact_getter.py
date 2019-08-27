@@ -110,6 +110,12 @@ async def rand_gif():
     return {'fact': loads(r.content)['data'][0]['images']['looping']['mp4']}
 
 
+@app.get("/dad_joke", response_class=UJSONResponse)
+async def rand_dad():
+    r = requests.get("https://icanhazdadjoke.com/", headers={'Accept': 'application/json'})
+    return {'fact': loads(r.content)['joke']}
+
+
 @app.get("/_ah/warmup", status_code=HTTP_200_OK, include_in_schema=False)
 async def warmup():
     return {'Response Code': '418'}
