@@ -2,7 +2,7 @@ fastapi[all]
 uvicorn
 gunicorn
 requests
-ujson
+orjson
 email_validator
 beautifulsoup4
 lxml
